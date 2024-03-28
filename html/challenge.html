@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Recaptcha</title>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<body>
+<form action="/captcha" method="post">
+    <div class="g-recaptcha" data-sitekey="<SITE_KEY>"></div>
+    <br>
+    <input type="submit" id="submit" value="Submit">
+</form>
+</body>
+</html>

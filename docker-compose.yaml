@@ -1,0 +1,36 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+  app:
+    container_name: discord-message-protect
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: discord-message-protect
+    depends_on:
+      - db
+    ports:
+      - 9090:9090
+    volumes:
+      - /opt/discord-message-protect/app:/app/logs
+    links:
+      - db
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - type: bind
+        source: /opt/discord-message-protect/db
+        target: /var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=discord_protect
+      - MYSQL_ROOT_PASSWORD=jR7kRP!QZ#C7h
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8083:8080

@@ -1,0 +1,35 @@
+{
+  "discord": {
+    "bot_token": "",
+    "app_id": "",
+    "command_name": "protect"
+  },
+  "sessions": {
+    "ttl": 10
+  },
+  "http": {
+    "scheme": "http",
+    "hostname": "",
+    "port": 9090,
+    "challenge_path": "/captcha",
+    "captcha_service": "",
+    "args": {
+      "site_key": "",
+      "secret_key": ""
+    }
+  },
+  "database": {
+    "password": "jR7kRP!QZ#C7h"
+  },
+  "secrets": {
+    "ttl": 30
+  },
+  "pollution": {
+    "strategy": "",
+    "args": {
+      "min_words": 3,
+      "max_words": 5,
+      "position": "trail"
+    }
+  }
+}
